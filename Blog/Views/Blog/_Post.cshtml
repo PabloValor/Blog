@@ -1,0 +1,16 @@
+﻿@model Data.Post
+@{
+    var post = Model;
+}
+
+<div class="post">
+    <header style="background-image: url(@post.imageList);">
+        <h2>@post.title</h2>
+    </header>
+    <div class="body">
+        <p>@post.shorDescription</p>
+        <h4>Creado: @post.created por @post.author.name @post.author.surname</h4>
+        <h4>Categoría: @post.category.description</h4>
+        @Html.ActionLink("Ver mas", "Detail", new { id = post.id_post }, new { @class = "btn pure-button pure-button-primary" })
+    </div>
+</div>

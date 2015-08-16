@@ -132,9 +132,41 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\bg-body.jpg" />
+    <Content Include="Content\Styles\00-Vendor\main.css">
+      <DependentUpon>zz-main.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\00-Vendor\main.min.css">
+      <DependentUpon>zz-main.less</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\00-Vendor\pure-grid-responsive.min.css" />
     <Content Include="Content\Styles\00-Vendor\pure.min.css" />
+    <Content Include="Content\Styles\01-Base\base.css">
+      <DependentUpon>base.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\01-Base\base.min.css">
+      <DependentUpon>base.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\04-Components\post-list.css">
+      <DependentUpon>post-list.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\04-Components\post-list.min.css">
+      <DependentUpon>post-list.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\main.css">
+      <DependentUpon>main.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\main.min.css">
+      <DependentUpon>main.less</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
+    <Content Include="Content\Styles\00-Vendor\zz-main.less" />
+    <Content Include="Content\Styles\main.less" />
+    <Content Include="Content\Styles\01-Base\base.less" />
+    <Content Include="Content\Styles\04-Components\post-list.less" />
+    <Content Include="Content\Styles\04-Components\post-details.less" />
+    <Content Include="Content\Styles\04-Components\zz-main.less" />
+    <Content Include="Content\Styles\01-Base\zz-main.less" />
     <None Include="Properties\PublishProfiles\localPublishProfile.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -149,14 +181,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Detail.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Blog\_Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Scripts\" />
-    <Folder Include="Content\Styles\01-Base\" />
     <Folder Include="Content\Styles\02-Layout\" />
     <Folder Include="Content\Styles\03-Shared\" />
-    <Folder Include="Content\Styles\04-Components\" />
     <Folder Include="Content\Styles\05-Responsive\" />
     <Folder Include="Models\" />
   </ItemGroup>

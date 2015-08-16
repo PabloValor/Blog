@@ -4,10 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/Styles/00-Vendor/pure.min.css" rel="stylesheet" />
-    <link href="~/Content/Styles/00-Vendor/pure-grid-responsive.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link href="~/Content/Styles/main.css" rel="stylesheet" />
 </head>
 <body>
-    @RenderBody()
+    <div class="main-container">
+        <div class="pure-g">
+            <div class="pure-u-1">
+                @Html.Partial("_Header")
+            </div>
+            <div class="pure-u-1 pure-u-md-20-24">
+                @RenderBody()
+            </div>
+            <div class="pure-u-1 pure-u-md-4-24">
+                <h1 style="background: pink;">Esta es la col 2</h1>
+            </div>
+            <div class="pure-u-1">
+                @Html.Partial("_Footer")
+            </div>
+        </div>
+    </div>
 </body>
 </html>

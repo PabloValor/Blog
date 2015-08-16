@@ -1,0 +1,39 @@
+﻿.post-list {
+    background: #FFF;
+    border: 1px solid #D4D4D4;
+    padding: 30px;
+
+    .post {
+        background: #F9F9F9;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.39);
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        header {
+            background-size: cover;
+            background-position: center center;
+            height: 250px;
+            position: relative;
+
+            h2 {
+                bottom: 0;
+                color: white;
+                text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+                margin: 0 0 10px 10px;
+                position: absolute;
+            }
+        }
+
+        .body {
+            padding: 20px;
+        }
+
+        .btn {
+            display: block;
+            margin: 0 auto;
+            width: 156px;
+        }
+    }
+}

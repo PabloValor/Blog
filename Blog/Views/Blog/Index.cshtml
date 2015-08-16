@@ -1,18 +1,10 @@
 ﻿@using Data
 @model IList<Post>
 
-<h1>Mi Blog</h1>
 <div class="post-list">
     @foreach (var post in Model)
     {
-        <div class="post">
-            <img src="@post.imageList" alt="@post.title" />
-            <h2>@post.title</h2>
-            <h3>@post.shorDescription</h3>
-            <h4>Creado: @post.created por @post.author.name @post.author.surname</h4>
-            <h4>Categoría: @post.category.description</h4>
-            @Html.ActionLink("Ver mas", "Detail", new { id = post.id_post })
-        </div>
+        @Html.Partial("~/Views/Blog/_Post.cshtml", post)
     }
 </div>
 
