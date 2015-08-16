@@ -55,6 +55,7 @@
           <Property Name="body" Type="varchar" MaxLength="5000" />
           <Property Name="id_author" Type="int" />
           <Property Name="id_category" Type="int" />
+          <Property Name="imageList" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="tag">
           <Key>
@@ -173,6 +174,7 @@
           <NavigationProperty Name="author" Relationship="BlogDBModel.FK__post__id_author__1273C1CD" FromRole="post" ToRole="author" />
           <NavigationProperty Name="category" Relationship="BlogDBModel.FK__post__id_categor__1367E606" FromRole="post" ToRole="category" />
           <NavigationProperty Name="tags" Relationship="BlogDBModel.tag_map" FromRole="post" ToRole="tag" />
+          <Property Type="String" Name="imageList" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tag">
           <Key>
@@ -237,6 +239,7 @@
           <EntitySetMapping Name="Posts">
             <EntityTypeMapping TypeName="BlogDBModel.Post">
               <MappingFragment StoreEntitySet="post">
+                <ScalarProperty Name="imageList" ColumnName="imageList" />
                 <ScalarProperty Name="id_category" ColumnName="id_category" />
                 <ScalarProperty Name="id_author" ColumnName="id_author" />
                 <ScalarProperty Name="body" ColumnName="body" />

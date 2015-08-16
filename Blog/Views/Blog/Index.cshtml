@@ -6,6 +6,7 @@
     @foreach (var post in Model)
     {
         <div class="post">
+            <img src="@post.imageList" alt="@post.title" />
             <h2>@post.title</h2>
             <h3>@post.shorDescription</h3>
             <h4>Creado: @post.created por @post.author.name @post.author.surname</h4>

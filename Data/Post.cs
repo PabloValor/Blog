@@ -26,6 +26,7 @@ namespace Data
         public string body { get; set; }
         public Nullable<int> id_author { get; set; }
         public Nullable<int> id_category { get; set; }
+        public string imageList { get; set; }
     
         public virtual Author author { get; set; }
         public virtual Category category { get; set; }
