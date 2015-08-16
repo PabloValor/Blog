@@ -4,46 +4,265 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BlogDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BlogDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="BlogDBModelStoreContainer">
-          <EntitySet Name="Posts" EntityType="BlogDBModel.Store.Posts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="author" EntityType="BlogDBModel.Store.author" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="category" EntityType="BlogDBModel.Store.category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="post" EntityType="BlogDBModel.Store.post" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tag" EntityType="BlogDBModel.Store.tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tag_map" EntityType="BlogDBModel.Store.tag_map" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__post__id_author__1273C1CD" Association="BlogDBModel.Store.FK__post__id_author__1273C1CD">
+            <End Role="author" EntitySet="author" />
+            <End Role="post" EntitySet="post" />
+          </AssociationSet>
+          <AssociationSet Name="FK__post__id_categor__1367E606" Association="BlogDBModel.Store.FK__post__id_categor__1367E606">
+            <End Role="category" EntitySet="category" />
+            <End Role="post" EntitySet="post" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tag_map__id_post__20C1E124" Association="BlogDBModel.Store.FK__tag_map__id_post__20C1E124">
+            <End Role="post" EntitySet="post" />
+            <End Role="tag_map" EntitySet="tag_map" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tag_map__id_tag__21B6055D" Association="BlogDBModel.Store.FK__tag_map__id_tag__21B6055D">
+            <End Role="tag" EntitySet="tag" />
+            <End Role="tag_map" EntitySet="tag_map" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Posts">
+        <EntityType Name="author">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="id_author" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="titulo" Type="varchar" MaxLength="100" />
+          <Property Name="id_author" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="surname" Type="varchar" MaxLength="50" />
+          <Property Name="aka" Type="varchar" MaxLength="50" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id_category" />
+          </Key>
+          <Property Name="id_category" Type="int" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="post">
+          <Key>
+            <PropertyRef Name="id_post" />
+          </Key>
+          <Property Name="id_post" Type="int" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="50" />
+          <Property Name="created" Type="date" />
+          <Property Name="shorDescription" Type="varchar" MaxLength="500" />
+          <Property Name="body" Type="varchar" MaxLength="5000" />
+          <Property Name="id_author" Type="int" />
+          <Property Name="id_category" Type="int" />
+        </EntityType>
+        <EntityType Name="tag">
+          <Key>
+            <PropertyRef Name="id_tag" />
+          </Key>
+          <Property Name="id_tag" Type="int" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tag_map">
+          <Key>
+            <PropertyRef Name="id_post" />
+            <PropertyRef Name="id_tag" />
+          </Key>
+          <Property Name="id_post" Type="int" Nullable="false" />
+          <Property Name="id_tag" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__post__id_author__1273C1CD">
+          <End Role="author" Type="BlogDBModel.Store.author" Multiplicity="0..1" />
+          <End Role="post" Type="BlogDBModel.Store.post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="author">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="post">
+              <PropertyRef Name="id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__post__id_categor__1367E606">
+          <End Role="category" Type="BlogDBModel.Store.category" Multiplicity="0..1" />
+          <End Role="post" Type="BlogDBModel.Store.post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id_category" />
+            </Principal>
+            <Dependent Role="post">
+              <PropertyRef Name="id_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tag_map__id_post__20C1E124">
+          <End Role="post" Type="BlogDBModel.Store.post" Multiplicity="1" />
+          <End Role="tag_map" Type="BlogDBModel.Store.tag_map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="post">
+              <PropertyRef Name="id_post" />
+            </Principal>
+            <Dependent Role="tag_map">
+              <PropertyRef Name="id_post" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tag_map__id_tag__21B6055D">
+          <End Role="tag" Type="BlogDBModel.Store.tag" Multiplicity="1" />
+          <End Role="tag_map" Type="BlogDBModel.Store.tag_map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tag">
+              <PropertyRef Name="id_tag" />
+            </Principal>
+            <Dependent Role="tag_map">
+              <PropertyRef Name="id_tag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BlogDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BlogDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Authors" EntityType="BlogDBModel.Author" />
+          <EntitySet Name="Categories" EntityType="BlogDBModel.Category" />
           <EntitySet Name="Posts" EntityType="BlogDBModel.Post" />
+          <EntitySet Name="Tags" EntityType="BlogDBModel.Tag" />
+          <AssociationSet Name="FK__post__id_author__1273C1CD" Association="BlogDBModel.FK__post__id_author__1273C1CD">
+            <End Role="author" EntitySet="Authors" />
+            <End Role="post" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__post__id_categor__1367E606" Association="BlogDBModel.FK__post__id_categor__1367E606">
+            <End Role="category" EntitySet="Categories" />
+            <End Role="post" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="tag_map" Association="BlogDBModel.tag_map">
+            <End Role="post" EntitySet="Posts" />
+            <End Role="tag" EntitySet="Tags" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="id_author" />
+          </Key>
+          <Property Type="Int32" Name="id_author" Nullable="false" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="surname" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="aka" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="posts" Relationship="BlogDBModel.FK__post__id_author__1273C1CD" FromRole="author" ToRole="post" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id_category" />
+          </Key>
+          <Property Type="Int32" Name="id_category" Nullable="false" />
+          <Property Type="String" Name="description" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="posts" Relationship="BlogDBModel.FK__post__id_categor__1367E606" FromRole="category" ToRole="post" />
+        </EntityType>
         <EntityType Name="Post">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="id_post" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="titulo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="id_post" Nullable="false" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="created" Precision="0" />
+          <Property Type="String" Name="shorDescription" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="body" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_author" />
+          <Property Type="Int32" Name="id_category" />
+          <NavigationProperty Name="author" Relationship="BlogDBModel.FK__post__id_author__1273C1CD" FromRole="post" ToRole="author" />
+          <NavigationProperty Name="category" Relationship="BlogDBModel.FK__post__id_categor__1367E606" FromRole="post" ToRole="category" />
+          <NavigationProperty Name="tags" Relationship="BlogDBModel.tag_map" FromRole="post" ToRole="tag" />
         </EntityType>
-      </Schema>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="id_tag" />
+          </Key>
+          <Property Type="Int32" Name="id_tag" Nullable="false" />
+          <Property Type="String" Name="description" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="posts" Relationship="BlogDBModel.tag_map" FromRole="tag" ToRole="post" />
+        </EntityType>
+        <Association Name="FK__post__id_author__1273C1CD">
+          <End Type="BlogDBModel.Author" Role="author" Multiplicity="0..1" />
+          <End Type="BlogDBModel.Post" Role="post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="author">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="post">
+              <PropertyRef Name="id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__post__id_categor__1367E606">
+          <End Type="BlogDBModel.Category" Role="category" Multiplicity="0..1" />
+          <End Type="BlogDBModel.Post" Role="post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id_category" />
+            </Principal>
+            <Dependent Role="post">
+              <PropertyRef Name="id_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tag_map">
+          <End Type="BlogDBModel.Post" Role="post" Multiplicity="*" />
+          <End Type="BlogDBModel.Tag" Role="tag" Multiplicity="*" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BlogDBModelStoreContainer" CdmEntityContainer="BlogDBEntities">
-          <EntitySetMapping Name="Posts">
-            <EntityTypeMapping TypeName="BlogDBModel.Post">
-              <MappingFragment StoreEntitySet="Posts">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <EntitySetMapping Name="Authors">
+            <EntityTypeMapping TypeName="BlogDBModel.Author">
+              <MappingFragment StoreEntitySet="author">
+                <ScalarProperty Name="aka" ColumnName="aka" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_author" ColumnName="id_author" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="BlogDBModel.Category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="id_category" ColumnName="id_category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="BlogDBModel.Post">
+              <MappingFragment StoreEntitySet="post">
+                <ScalarProperty Name="id_category" ColumnName="id_category" />
+                <ScalarProperty Name="id_author" ColumnName="id_author" />
+                <ScalarProperty Name="body" ColumnName="body" />
+                <ScalarProperty Name="shorDescription" ColumnName="shorDescription" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id_post" ColumnName="id_post" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="BlogDBModel.Tag">
+              <MappingFragment StoreEntitySet="tag">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="id_tag" ColumnName="id_tag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tag_map" TypeName="BlogDBModel.tag_map" StoreEntitySet="tag_map">
+            <EndProperty Name="tag">
+              <ScalarProperty Name="id_tag" ColumnName="id_tag" />
+            </EndProperty>
+            <EndProperty Name="post">
+              <ScalarProperty Name="id_post" ColumnName="id_post" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

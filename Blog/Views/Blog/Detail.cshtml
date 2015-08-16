@@ -1,0 +1,9 @@
+﻿@using Data
+@model Post
+
+<h2>@Model.title</h2>
+<p>@Model.created</p>
+
+@Html.Raw(Model.body)
+<br />
+@Html.ActionLink("volver a los posts", "Index")

@@ -25,6 +25,9 @@ namespace Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Tag> Tags { get; set; }
     }
 }

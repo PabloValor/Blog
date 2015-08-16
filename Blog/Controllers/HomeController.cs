@@ -9,14 +9,20 @@ namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: /Home/
         BlogDBEntities db = new BlogDBEntities();
 
         public ActionResult Index()
         {
             var _model = db.Posts.ToList();
 
-            return View(_model);
+            return View("~/Views/Blog/Index.cshtml", _model);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            var _model = db.Posts.Where(x => x.id_post == id).First(); 
+
+            return View("~/Views/Blog/Detail.cshtml", _model);
         }
 
     }
