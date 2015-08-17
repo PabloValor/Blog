@@ -32,16 +32,29 @@ a {
   margin: 0 auto;
   max-width: 1170px;
 }
+header.header {
+  background: white;
+  border: 1px solid #D4D4D4;
+  overflow: hidden;
+  text-align: center;
+  margin: 10px;
+}
 aside {
   background: #F9F9F9;
   border: 1px solid #D4D4D4;
-  margin: 0 10px;
+  margin: 0 10px 0 0;
+}
+footer {
+  background: white;
+  border: 1px solid #DDD;
+  min-height: 150px;
+  margin: 0 10px 10px;
 }
 .post-list {
   background: #FFF;
   border: 1px solid #D4D4D4;
   padding: 30px;
-  margin: 0 10px;
+  margin: 0 10px 10px;
 }
 .post-list .post {
   background: #F9F9F9;

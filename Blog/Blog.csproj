@@ -153,6 +153,24 @@
     <Content Include="Content\Styles\02-Layout\aside.min.css">
       <DependentUpon>aside.less</DependentUpon>
     </Content>
+    <Content Include="Content\Styles\02-Layout\footer.css">
+      <DependentUpon>footer.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\02-Layout\footer.min.css">
+      <DependentUpon>footer.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\02-Layout\header.css">
+      <DependentUpon>header.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\02-Layout\header.min.css">
+      <DependentUpon>header.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\02-Layout\layout.css">
+      <DependentUpon>layout.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\02-Layout\layout.min.css">
+      <DependentUpon>layout.less</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\02-Layout\zz-main.css">
       <DependentUpon>zz-main.less</DependentUpon>
     </Content>
@@ -189,6 +207,8 @@
     <Content Include="Content\Styles\02-Layout\aside.less" />
     <Content Include="Content\Styles\02-Layout\zz-main.less" />
     <Content Include="Content\Styles\02-Layout\layout.less" />
+    <Content Include="Content\Styles\02-Layout\header.less" />
+    <Content Include="Content\Styles\02-Layout\footer.less" />
     <None Include="Properties\PublishProfiles\localPublishProfile.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
