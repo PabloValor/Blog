@@ -12,6 +12,14 @@
   display: inline-block;
   padding: 2px 4px;
   margin: 3px;
+  /*
+            The followings rules are for truncate text.
+            Place it in a media query    
+        */
+  /*overflow: hidden; 
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 140px;*/
 }
 .tags-cloud span:nth-child(1) {
   margin-left: 0;

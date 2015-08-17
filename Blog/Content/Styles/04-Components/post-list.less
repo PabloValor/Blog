@@ -2,11 +2,12 @@
     background: #FFF;
     border: 1px solid #D4D4D4;
     padding: 30px;
-
+    margin: 0 10px;
     .post {
         background: #F9F9F9;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.39);
         margin-bottom: 30px;
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -28,6 +29,18 @@
 
         .body {
             padding: 20px;
+
+            .created, .category, .author {
+                color: #949494;
+                font-size: .8em;
+            }
+
+            .category {
+            }
+
+            .author {
+                font-weight: bold;
+            }
         }
 
         .btn {

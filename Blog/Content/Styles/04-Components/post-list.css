@@ -2,6 +2,7 @@
   background: #FFF;
   border: 1px solid #D4D4D4;
   padding: 30px;
+  margin: 0 10px;
 }
 .post-list .post {
   background: #F9F9F9;
@@ -26,6 +27,15 @@
 }
 .post-list .post .body {
   padding: 20px;
+}
+.post-list .post .body .created,
+.post-list .post .body .category,
+.post-list .post .body .author {
+  color: #949494;
+  font-size: .8em;
+}
+.post-list .post .body .author {
+  font-weight: bold;
 }
 .post-list .post .btn {
   display: block;

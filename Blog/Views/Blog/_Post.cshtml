@@ -8,9 +8,12 @@
         <h2>@post.title</h2>
     </header>
     <div class="body">
+        <div>
+            <span class="category">Categoría: <strong>@post.category.description</strong></span>
+            <span class="created">Creado @post.created</span>
+            <h2 class="author">Autor <a href="#!">@post.author.name @post.author.surname</a></h2>
+        </div>
         <p>@post.shorDescription</p>
-        <h4>Creado: @post.created por @post.author.name @post.author.surname</h4>
-        <h4>Categoría: @post.category.description</h4>
         @Html.ActionLink("Ver mas", "Detail", new { id = post.id_post }, new { @class = "btn pure-button pure-button-primary" })
     </div>
 </div>

@@ -153,6 +153,12 @@
     <Content Include="Content\Styles\02-Layout\aside.min.css">
       <DependentUpon>aside.less</DependentUpon>
     </Content>
+    <Content Include="Content\Styles\02-Layout\zz-main.css">
+      <DependentUpon>zz-main.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\02-Layout\zz-main.min.css">
+      <DependentUpon>zz-main.less</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\04-Components\post-list.css">
       <DependentUpon>post-list.less</DependentUpon>
     </Content>
@@ -182,6 +188,7 @@
     <Content Include="Content\Styles\04-Components\tags-cloud.less" />
     <Content Include="Content\Styles\02-Layout\aside.less" />
     <Content Include="Content\Styles\02-Layout\zz-main.less" />
+    <Content Include="Content\Styles\02-Layout\layout.less" />
     <None Include="Properties\PublishProfiles\localPublishProfile.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
