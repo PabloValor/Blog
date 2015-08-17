@@ -11,6 +11,12 @@ namespace Blog.Controllers
     {
         BlogDBEntities db = new BlogDBEntities();
 
+        public ActionResult TagsCloud()
+        {
+            var _model = db.Tags.ToList();
+            return PartialView("~/Views/Shared/_TagsCloud.cshtml", _model);
+        }
+
         public ActionResult Index()
         {
             var _model = db.Posts.ToList();
@@ -20,10 +26,9 @@ namespace Blog.Controllers
 
         public ActionResult Detail(int id)
         {
-            var _model = db.Posts.Where(x => x.id_post == id).First(); 
+            var _model = db.Posts.Where(x => x.id_post == id).First();
 
             return View("~/Views/Blog/Detail.cshtml", _model);
         }
-
     }
 }

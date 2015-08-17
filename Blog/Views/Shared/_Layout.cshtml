@@ -18,7 +18,9 @@
                 @RenderBody()
             </div>
             <div class="pure-u-1 pure-u-md-4-24">
-                <h1 style="background: pink;">Esta es la col 2</h1>
+                <aside>
+                    @{Html.RenderAction("TagsCloud");}
+                </aside>
             </div>
             <div class="pure-u-1">
                 @Html.Partial("_Footer")

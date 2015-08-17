@@ -22,9 +22,13 @@ body {
   font-size: 20px;
 }
 body .main-container {
-  padding: 0 20px;
   margin: 0 auto;
   max-width: 1170px;
+}
+aside {
+  background: #F9F9F9;
+  border: 1px solid #D4D4D4;
+  margin-left: 10px;
 }
 .post-list {
   background: #FFF;
@@ -59,4 +63,22 @@ body .main-container {
   display: block;
   margin: 0 auto;
   width: 156px;
+}
+.tags-cloud {
+  padding: 10px;
+}
+.tags-cloud h3 {
+  text-align: center;
+  margin: 2px 0;
+}
+.tags-cloud span {
+  background: #c4e4f8;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 2px 4px;
+  margin: 3px;
+}
+.tags-cloud span:nth-child(1) {
+  margin-left: 0;
 }

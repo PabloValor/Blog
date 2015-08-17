@@ -1,0 +1,10 @@
+﻿@using Data
+@model IList<Tag>
+
+<div class="tags-cloud">
+    <h3>Tags:</h3>
+    @foreach (var tag in Model)
+    {
+        <span>@tag.description</span>
+    }
+</div>

@@ -147,11 +147,23 @@
     <Content Include="Content\Styles\01-Base\base.min.css">
       <DependentUpon>base.less</DependentUpon>
     </Content>
+    <Content Include="Content\Styles\02-Layout\aside.css">
+      <DependentUpon>aside.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\02-Layout\aside.min.css">
+      <DependentUpon>aside.less</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\04-Components\post-list.css">
       <DependentUpon>post-list.less</DependentUpon>
     </Content>
     <Content Include="Content\Styles\04-Components\post-list.min.css">
       <DependentUpon>post-list.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\04-Components\tags-cloud.css">
+      <DependentUpon>tags-cloud.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\04-Components\tags-cloud.min.css">
+      <DependentUpon>tags-cloud.less</DependentUpon>
     </Content>
     <Content Include="Content\Styles\main.css">
       <DependentUpon>main.less</DependentUpon>
@@ -167,6 +179,9 @@
     <Content Include="Content\Styles\04-Components\post-details.less" />
     <Content Include="Content\Styles\04-Components\zz-main.less" />
     <Content Include="Content\Styles\01-Base\zz-main.less" />
+    <Content Include="Content\Styles\04-Components\tags-cloud.less" />
+    <Content Include="Content\Styles\02-Layout\aside.less" />
+    <Content Include="Content\Styles\02-Layout\zz-main.less" />
     <None Include="Properties\PublishProfiles\localPublishProfile.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -184,11 +199,11 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Blog\_Post.cshtml" />
+    <Content Include="Views\Shared\_TagsCloud.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Scripts\" />
-    <Folder Include="Content\Styles\02-Layout\" />
     <Folder Include="Content\Styles\03-Shared\" />
     <Folder Include="Content\Styles\05-Responsive\" />
     <Folder Include="Models\" />
