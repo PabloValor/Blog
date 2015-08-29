@@ -13,9 +13,7 @@ namespace Blog.Test
         [Test]
         public void TestHomeController()
         {
-            int number = 2;
 
-            Assert.AreEqual(2, number);
         }
     }
 }

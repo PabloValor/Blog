@@ -5,16 +5,24 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Blog.Models;
+using Aplication.Abstractions;
+
 
 namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
         BlogDBEntities db = new BlogDBEntities();
+        private readonly IHomeService _homeService;
+
+        public HomeController(IHomeService homeService)
+        {
+            _homeService = homeService;
+        }
 
         public ActionResult Index()
         {
-            var _model = db.Posts.ToList();
+            var _model = _homeService.getAllPost();
 
             AutoMapper.Mapper.CreateMap<Post, PostViewModel>();
 
