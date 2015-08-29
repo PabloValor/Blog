@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Data;
+using Blog.Models;
 
 namespace Blog.Controllers
 {
@@ -11,17 +12,26 @@ namespace Blog.Controllers
     {
         BlogDBEntities db = new BlogDBEntities();
 
-        public ActionResult TagsCloud()
-        {
-            var _model = db.Tags.ToList();
-            return PartialView("~/Views/Shared/_TagsCloud.cshtml", _model);
-        }
-
         public ActionResult Index()
         {
             var _model = db.Posts.ToList();
 
-            return View("~/Views/Blog/Index.cshtml", _model);
+            AutoMapper.Mapper.CreateMap<Post, PostViewModel>();
+
+            var _postViewModel = AutoMapper.Mapper.Map<IList<Post>, IList<PostViewModel>>(_model);
+
+            return View("~/Views/Blog/Index.cshtml", _postViewModel);
+        }
+
+        public ActionResult TagsCloud()
+        {
+            var _model = db.Tags.ToList();
+
+            AutoMapper.Mapper.CreateMap<Tag, TagViewModel>();
+
+            var _postViewModel = AutoMapper.Mapper.Map<IList<Tag>, IList<TagViewModel>>(_model);
+
+            return PartialView("~/Views/Shared/_TagsCloud.cshtml", _postViewModel);
         }
 
         public ActionResult Detail(int id)

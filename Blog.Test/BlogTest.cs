@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Blog.Controllers;
 
@@ -16,7 +15,7 @@ namespace Blog.Test
         {
             int number = 2;
 
-            NUnit.Framework.Assert.AreEqual(number, 2);            
+            Assert.AreEqual(2, number);
         }
     }
 }
