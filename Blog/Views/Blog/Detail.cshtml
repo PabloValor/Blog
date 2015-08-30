@@ -1,9 +1,11 @@
-﻿@using Data
-@model Post
+﻿@model Blog.Models.PostViewModel
+@{
+    var post = Model;
+}
 
-<h2>@Model.title</h2>
-<p>@Model.created</p>
+<h2>@post.title</h2>
+<p>@post.created</p>
 
-@Html.Raw(Model.body)
+@Html.Raw(post.body)
 <br />
 @Html.ActionLink("volver a los posts", "Index", null, new { @class = "pure-button pure-button-primary" })

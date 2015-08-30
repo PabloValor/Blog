@@ -10,11 +10,16 @@ namespace Aplication
 {
     public class HomeService : IHomeService
     {
-        BlogDBEntities db = new BlogDBEntities();
+        private readonly BlogDBEntities db = new BlogDBEntities();
 
-        public IList<Post> getAllPost()
+        public IList<Post> getAllPosts()
         {
             return db.Posts.ToList();
+        }
+
+        public IList<Tag> getAllTags()
+        {
+            return db.Tags.ToList();
         }
     }
 }

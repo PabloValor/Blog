@@ -9,6 +9,7 @@ namespace Aplication.Abstractions
 {
     public interface IHomeService
     {
-        IList<Post> getAllPost();
+        IList<Post> getAllPosts();
+        IList<Tag> getAllTags();
     }
 }

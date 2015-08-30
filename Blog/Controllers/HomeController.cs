@@ -22,7 +22,7 @@ namespace Blog.Controllers
 
         public ActionResult Index()
         {
-            var _model = _homeService.getAllPost();
+            var _model = _homeService.getAllPosts();
 
             AutoMapper.Mapper.CreateMap<Post, PostViewModel>();
 
@@ -33,7 +33,7 @@ namespace Blog.Controllers
 
         public ActionResult TagsCloud()
         {
-            var _model = db.Tags.ToList();
+            var _model = _homeService.getAllTags();
 
             AutoMapper.Mapper.CreateMap<Tag, TagViewModel>();
 
@@ -44,9 +44,13 @@ namespace Blog.Controllers
 
         public ActionResult Detail(int id)
         {
-            var _model = db.Posts.Where(x => x.id_post == id).First();
+            var _model = _homeService.getAllPosts().Where(x => x.id_post == id).First();
 
-            return View("~/Views/Blog/Detail.cshtml", _model);
+            AutoMapper.Mapper.CreateMap<Post, PostViewModel>();
+
+            var _postViewModel = AutoMapper.Mapper.Map<Post, PostViewModel>(_model);
+
+            return View("~/Views/Blog/Detail.cshtml", _postViewModel);
         }
     }
 }
