@@ -9,3 +9,5 @@
 @Html.Raw(post.body)
 <br />
 @Html.ActionLink("volver a los posts", "Index", null, new { @class = "pure-button pure-button-primary" })
+
+@{Html.RenderPartial("_Disqus");}

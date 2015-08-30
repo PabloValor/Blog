@@ -253,6 +253,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Blog\_Post.cshtml" />
     <Content Include="Views\Shared\_TagsCloud.cshtml" />
+    <Content Include="Views\Shared\_Disqus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
