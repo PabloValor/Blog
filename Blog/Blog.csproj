@@ -203,6 +203,18 @@
     <Content Include="Content\Styles\02-Layout\zz-main.min.css">
       <DependentUpon>zz-main.less</DependentUpon>
     </Content>
+    <Content Include="Content\Styles\04-Components\disqus.css">
+      <DependentUpon>disqus.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\04-Components\disqus.min.css">
+      <DependentUpon>disqus.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\04-Components\post-details.css">
+      <DependentUpon>post-details.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\04-Components\post-details.min.css">
+      <DependentUpon>post-details.less</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\04-Components\post-list.css">
       <DependentUpon>post-list.less</DependentUpon>
     </Content>
@@ -214,6 +226,12 @@
     </Content>
     <Content Include="Content\Styles\04-Components\tags-cloud.min.css">
       <DependentUpon>tags-cloud.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\05-Responsive\zz-main.css">
+      <DependentUpon>zz-main.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\05-Responsive\zz-main.min.css">
+      <DependentUpon>zz-main.less</DependentUpon>
     </Content>
     <Content Include="Content\Styles\main.css">
       <DependentUpon>main.less</DependentUpon>
@@ -235,6 +253,11 @@
     <Content Include="Content\Styles\02-Layout\layout.less" />
     <Content Include="Content\Styles\02-Layout\header.less" />
     <Content Include="Content\Styles\02-Layout\footer.less" />
+    <Content Include="Content\Styles\05-Responsive\01-sm-queries.less" />
+    <Content Include="Content\Styles\05-Responsive\02-md-queries.less" />
+    <Content Include="Content\Styles\05-Responsive\03-lg-queries.less" />
+    <Content Include="Content\Styles\05-Responsive\zz-main.less" />
+    <Content Include="Content\Styles\04-Components\disqus.less" />
     <None Include="Properties\PublishProfiles\localPublishProfile.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -259,7 +282,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Scripts\" />
     <Folder Include="Content\Styles\03-Shared\" />
-    <Folder Include="Content\Styles\05-Responsive\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

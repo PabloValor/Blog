@@ -4,7 +4,7 @@
 body {
   background-image: url(../Images/bg-body.jpg);
   color: #636363;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-size: 20px;
 }
 a {

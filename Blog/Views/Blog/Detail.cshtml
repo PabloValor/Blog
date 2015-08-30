@@ -3,11 +3,19 @@
     var post = Model;
 }
 
-<h2>@post.title</h2>
-<p>@post.created</p>
+<div class="post-details">
+    <h2 class="title">@post.title</h2>
+    <h3 class="created">@post.created | <a href="#!">@post.author.name @post.author.surname</a></h3>
 
-@Html.Raw(post.body)
-<br />
-@Html.ActionLink("volver a los posts", "Index", null, new { @class = "pure-button pure-button-primary" })
+    <div class="body">
+        @Html.Raw(post.body)
+    </div>
+    <a href="@Url.Action("Index", new { id = post.id_post })" class="btn pure-button pure-button-primary">&laquo; Volver a los posts</a>
 
-@{Html.RenderPartial("_Disqus");}
+    <div class="disqus-container">
+        @{Html.RenderPartial("_Disqus");}
+    </div>
+</div>
+
+
+

@@ -22,13 +22,14 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 body {
   background-image: url(../Images/bg-body.jpg);
   color: #636363;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-size: 20px;
 }
 a {
   color: #0078e7;
 }
 .main-container {
+  padding: 0 15px;
   margin: 0 auto;
   max-width: 1170px;
 }
@@ -37,18 +38,18 @@ header.header {
   border: 1px solid #D4D4D4;
   overflow: hidden;
   text-align: center;
-  margin: 10px;
+  margin: 10px 0 30px 0;
 }
 aside {
   background: #F9F9F9;
   border: 1px solid #D4D4D4;
-  margin: 0 10px 0 0;
+  margin: 0 0 20px 0;
 }
 footer {
   background: white;
   border: 1px solid #DDD;
   min-height: 150px;
-  margin: 0 10px 10px;
+  margin: 0 0 10px;
 }
 .post-list {
   background: #FFF;
@@ -94,6 +95,30 @@ footer {
   margin: 0 auto;
   width: 156px;
 }
+.post-details {
+  padding-right: 20px;
+}
+.post-details .title {
+  text-align: center;
+  margin-top: 0;
+}
+.post-details .created {
+  color: #808080;
+  font-size: .8em;
+  font-weight: bold;
+}
+.post-details .body {
+  letter-spacing: .1px;
+  line-height: 25px;
+}
+.post-details .body img {
+  margin: 0 auto;
+}
+.post-details .btn {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+}
 .tags-cloud {
   padding: 10px;
 }
@@ -119,4 +144,7 @@ footer {
 }
 .tags-cloud span:nth-child(1) {
   margin-left: 0;
+}
+.disqus-container {
+  margin: 20px 0;
 }

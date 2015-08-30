@@ -14,6 +14,6 @@
             <h2 class="author">Autor <a href="#!">@post.author.name @post.author.surname</a></h2>
         </div>
         <p>@post.shorDescription</p>
-        @Html.ActionLink("Ver más", "Detail", new { id = post.id_post }, new { @class = "btn pure-button pure-button-primary" })
+        <a href="@Url.Action("Detail", new { id = post.id_post })" class="btn pure-button pure-button-primary">Ver Más &raquo;</a>
     </div>
 </div>
