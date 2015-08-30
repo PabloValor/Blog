@@ -69,6 +69,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -95,6 +96,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Aplication\Aplication.csproj">
+      <Project>{86c9624b-79dc-4686-b57b-b020fbf9eaef}</Project>
+      <Name>Aplication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Blog\Blog.csproj">
       <Project>{14bc8e30-2d67-4ba5-8f27-433f5a6e86dd}</Project>
       <Name>Blog</Name>

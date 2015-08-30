@@ -1,6 +1,9 @@
 ﻿using System;
 using NUnit.Framework;
 using Blog.Controllers;
+using Moq;
+using Aplication.Abstractions;
+using System.Web.Mvc;
 
 namespace Blog.Test
 {
@@ -15,10 +18,15 @@ namespace Blog.Test
         {
             // Arrange
             const string viewNameExpected = "Index";
+            Mock<IHomeService> homeServiceMock = new Mock<IHomeService>();
+            Mock<HomeController> HomeControllerMock = new Mock<HomeController>(homeServiceMock.Object);
+            HomeController controller = HomeControllerMock.Object;  
 
             // Act
+            var result = (ViewResult)controller.Index();
 
             // Assert
+            Assert.AreEqual(viewNameExpected, result); 
         }
     }
 }
