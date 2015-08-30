@@ -5,15 +5,20 @@ using Blog.Controllers;
 namespace Blog.Test
 {
     [TestFixture]
-    public class BlogTest
+    public class HomeControllerTest
     {
         /// <summary>
         /// Test for action methods from HomeController
         /// </summary>
         [Test]
-        public void TestHomeController()
+        public void ReturnIndexWhenIndexActionIsCalled()
         {
+            // Arrange
+            const string viewNameExpected = "Index";
 
+            // Act
+
+            // Assert
         }
     }
 }

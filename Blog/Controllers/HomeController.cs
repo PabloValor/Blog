@@ -12,7 +12,6 @@ namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
-        BlogDBEntities db = new BlogDBEntities();
         private readonly IHomeService _homeService;
 
         public HomeController(IHomeService homeService)
